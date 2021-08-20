@@ -4,4 +4,6 @@ cargo check
 
 cargo run
 
+cargo update
+
 cargo clean
