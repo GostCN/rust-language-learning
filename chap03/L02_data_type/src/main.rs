@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     //error: type annotations needed
     // let guess = "42".parse().expect("Not a number!");
@@ -18,6 +20,7 @@ fn main() {
     let quotient = 56.7 / 32.2;
     // 取余
     let remainder = 43 % 5;
+    println!("The value of quotient is: {} {}", quotient, remainder);
 
     let t = true;
     let f: bool = false; // 显式指定类型注解
@@ -44,6 +47,7 @@ fn main() {
     //array
     let a: [i32; 5] = [1, 2, 3, 4, 5];
     let a = [1, 2, 3, 4, 5];
+    let a = [3; 5];         //let a = [3, 3, 3, 3, 3];
     let first = a[0];
     let second = a[1];
     println!("The value of first is: {}", first);
@@ -53,5 +57,23 @@ fn main() {
     // let index = 10;
     // let element = a[index];
     // println!("The value of element is: {}", element);
+
+    //error: index out of bounds
+    let a = [1, 2, 3, 4, 5];
+    println!("Please enter an array index.");
+    let mut index = String::new();
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+    let element = a[index];
+    println!(
+        "The value of the element at index {} is: {}",
+        index, element
+    );
+
 
 }
