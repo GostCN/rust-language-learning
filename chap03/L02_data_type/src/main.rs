@@ -58,7 +58,7 @@ fn main() {
     // let element = a[index];
     // println!("The value of element is: {}", element);
 
-    //error: index out of bounds
+    //error: index out of bounds,if index greater 4;
     let a = [1, 2, 3, 4, 5];
     println!("Please enter an array index.");
     let mut index = String::new();
